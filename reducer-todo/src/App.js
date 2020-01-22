@@ -11,6 +11,7 @@ import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(todoReducer, initialState);
+  console.log("App State", state);
 
   return (
     <div className="App">

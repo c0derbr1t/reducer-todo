@@ -3,3 +3,11 @@
   font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
+.item-completed {
+  color: red;
+}
+
+.item {
+  color: blue;
+}
+

@@ -1,14 +1,15 @@
-import React, { useState, useReducer } from 'react';
+import React, { useState } from 'react';
 
 
 
 const TodoForm = props => {
         const [newItem, setNewItem] = useState('');
+        const [value, setValue] = useState('');
 
     const handleChanges = e => {
         setNewItem({
             item: e.target.value,
-            completed: false,
+            completed: true,
             id: Date.now()
         }
         )
@@ -16,7 +17,7 @@ const TodoForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.dispatch({ type: "ADD_ITEM", payload: newItem })
+        props.dispatch({ type: "ADD_ITEM", payload: newItem });
     }
 
     console.log("newItem in TodoForm.js", newItem);
