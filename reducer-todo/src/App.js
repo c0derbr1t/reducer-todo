@@ -13,10 +13,7 @@ function App() {
       <header className="App-header">
         <Navigation />
       </header>
-      <Route exact path='/'>
-        Add an Image here
-      </Route>
-      <Route path='/TodoList'>
+      <Route path='/'>
         <TodoList />  
       </Route>
       <Route path='/TodoForm'>
