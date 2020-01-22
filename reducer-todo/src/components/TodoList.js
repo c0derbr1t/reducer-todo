@@ -3,17 +3,13 @@ import React, { useState, useEffect, useReducer } from 'react';
 import { initialState, todoReducer } from '../reducers/todoReducer';
 import Todo from './Todo';
 
-const TodoList = () => {
-    const [state, dispatch] = useReducer(todoReducer, initialState);
+const TodoList = props => {
 
-    console.log("outside", state);
-    useEffect(() => {
-        console.log("useEffect", state);
-    }, [state])
+    console.log("outside", props.state);
 
     return (
         <div>
-            {state.map(item => {
+            {props.state.map(item => {
                 return <Todo key={item.id} item={item} />
             })}
         </div>

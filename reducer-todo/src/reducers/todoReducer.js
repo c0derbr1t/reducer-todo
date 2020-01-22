@@ -12,7 +12,11 @@ export const todoReducer = (state, action) => {
             console.log("action", action.payload);
             return [
                 ...state, 
-                action.payload
+                {
+                    item: action.payload.item,
+                    completed: action.payload.completed,
+                    id: action.payload.id
+                }
             ];
         default:
             return state;
