@@ -14,36 +14,34 @@ export const todoReducer = (state, action) => {
                 ...state, 
                 {
                     item: action.payload.item,
-                    completed: action.payload.completed,
-                    id: action.payload.id
+                    completed: false,
+                    id: Date.now()
                 }
             ];
         case "TOGGLE_COMPLETE":
             console.log("in Toggle in reducer", state);
             console.log("action in toggle", action.payload);
-            state.map(item => {
-                console.log("item id in map from toggle", item.id);
-                if (item.id === action.payload) {
-                    return {
-                        item: item.item,
-                        completed: !item.completed,
-                        id: item.id
-                    }
-                } else {
-                    return {
-                        item: item.item,
-                        completed: item.completed,
-                        id: item.id
-                    }
-                };
-            });
+            return  state.map(item => {
+                    console.log("item id in map from toggle", item.id);
+                    if (item.id === action.payload) {
+                        console.log("in the IF", !item.completed);
+                        return {
+                            ...item,
+                            completed: !item.completed
+                        }
+                    } else {
+                        return item;
+                    };
+                })
+            
+
         case "CLEAR_COMPLETED":
             console.log("state in Clear", state);
             const notCompleted =  state.filter(item => !item.completed);
             const completed = state.filter(item => item.completed);
             console.log("Completed: ", notCompleted);
             console.log("Completed: ", completed);
-            return [state, notCompleted, completed];
+            return notCompleted;
                 
             
             

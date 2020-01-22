@@ -8,9 +8,7 @@ const TodoForm = props => {
 
     const handleChanges = e => {
         setNewItem({
-            item: e.target.value,
-            completed: true,
-            id: Date.now()
+            item: e.target.value
         }
         )
     }
