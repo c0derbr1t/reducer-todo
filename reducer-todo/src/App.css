@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+.item-completed {
+  color: red;
+}
+
+.item {
+  color: blue;
+}
+
